@@ -5,6 +5,16 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class TeamCreationTests extends TestBase {
+
+   @Test
+
+   public void teamCreationFromPlusButtonOnHeader(){
+           clickOnPlusButtonOnHeader();
+           selectCreateTeamFromDropDown();
+           fillTeamCreationForm("autoTeam1", "description qa 21");
+           clickContinueButton();
+       }
+
     @Test
     public void testTeamCreation(){
         Assert.assertTrue(isUserLoggedIn());
@@ -16,15 +26,6 @@ public class TeamCreationTests extends TestBase {
         Assert.assertFalse(isUserLoggedOut());
 
     }
-
-    private boolean isUserLoggedIn() {
-        return isElementPresent(By.name("house"));
-    }
-
-       private boolean isUserLoggedOut() {
-        return isElementPresent(By.cssSelector("[href='/login']"));
-    }
-
 
 
 }

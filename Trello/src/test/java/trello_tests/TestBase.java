@@ -14,7 +14,7 @@ public class TestBase {
     @BeforeClass
     public void setUP() throws InterruptedException {
         driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(35, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         openSite("https://trello.com");
         login("Lizamil@mail.ru","liza1978");
@@ -22,8 +22,8 @@ public class TestBase {
 
     @AfterClass
     public void tearDown() throws InterruptedException {
-        Thread.sleep(10000);
-       driver.quit();
+        Thread.sleep(2000);
+        driver.quit();
 
     }
 
@@ -96,11 +96,71 @@ public class TestBase {
             click(By.xpath("//a[@href='#']//div[contains(text(),'"+teamName+"')]"));
         }
 
-    private boolean isTeamExist(){
+    public boolean isTeamExist(){
     return driver.findElements(By.cssSelector("[class='icon-lg icon-organization']")).size()>0;
     }
 
-    protected boolean isElementPresent(By locator) {
+    public boolean isElementPresent(By locator) {
             return driver.findElements(locator).size()>0;
         }
+
+    public void closeBoard(String boardName) {
+        //check that the board exists and enter to the board
+        if (isElementPresent(By.xpath("//div[@title='"+boardName+"']")))
+            click(By.xpath("//div[@title='"+boardName+"']"));
+        else {
+            System.out.println("Board doesn't exist");
+            return;}
+         //click on the Show Menu Button
+        click(By.cssSelector("[class='board-header-btn mod-show-menu js-show-sidebar']"));
+        //click on the button More in Menu
+        click(By.cssSelector("[class='icon-sm icon-overflow-menu-horizontal board-menu-navigation-item-link-icon']"));
+        //click on the button Close in Menu
+        click(By.cssSelector("[class='board-menu-navigation-item-link js-close-board']"));
+        //confirm Close board
+        click(By.cssSelector("[class='js-confirm full negate']"));
+        }
+
+    public boolean isUserLoggedIn() {
+        return isElementPresent(By.name("house"));
+    }
+
+    public boolean isUserLoggedOut() {
+        return isElementPresent(By.cssSelector("[href='/login']"));
+    }
+
+    public void clickContinueButton() {
+       click(By.cssSelector("[type='submit']"));
+
+    }
+
+    public void fillTeamCreationForm(String teamName, String description) {
+        type(By.cssSelector("[data-test-id='header-create-team-name-input']"),teamName);
+        type(By.cssSelector("textarea"),description);
+    }
+
+    public void selectCreateTeamFromDropDown() {
+       click(By.cssSelector("[data-test-id='header-create-team-button']"));
+
+    }
+
+    public void clickOnPlusButtonOnHeader() {
+        click(By.name("add"));
+    }
+
+    public void reOpenBoardByName(String boardName) {
+        if(isElementPresent(By.xpath("//ul[@class='_3Qi2qlYDnzYhMI']/li//a[contains(text(),'"+boardName+"')]")))
+            click(By.xpath("//ul[@class='_3Qi2qlYDnzYhMI']/li//a[contains(text(),'"+boardName+"')]/../..//span[@ name='refresh']"));
+        else System.out.println("This board doesn't exist");
+
+    }
+
+    public void selectSeeCloseBoardsFromDropDown() {
+        click(By.cssSelector("[data-test-id='header-boards-menu-open-closed']"));
+
+    }
+
+    public void clickOnBoardButtonOnHeader() {
+        click(By.cssSelector("[data-test-id='header-boards-menu-button']"));
+    }
 }
