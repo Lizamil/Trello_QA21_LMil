@@ -11,26 +11,19 @@ public class TestSimple extends TestBase {
 
     @Test
 
-    public void createBoard() {
+    public void createBoard() throws InterruptedException {
         String boardName="board1";
         testBoardCreation(boardName);
-        Assert.assertTrue(isUserLoggedIn(boardName));
+        Assert.assertTrue(isBoardExistsByNameCheckOnMainPage(boardName));
     }
 
 
-    private boolean isUserLoggedIn(String name) {
-        return isElementPresent(By.cssSelector("[title="+name+"]"));
-    }
-
-    public void testBoardCreation(String name) {
+    public void testBoardCreation(String name) throws InterruptedException {
         click(By.cssSelector("[class='board-tile mod-add']"));
         type(By.cssSelector("[class='subtle-input']"), name);
         click(By.cssSelector("[class= 'primary']"));
-       /* new Actions(driver).moveToElement(
-               driver.findElement(By.cssSelector("[class='_1q-xxtNvcdFBca']"))).click().perform();
-            click(By.cssSelector("[class='js-react-root']"));
-            click(By.cssSelector("[class='js-react-root'] [class='_1q-xxtNvcdFBca']"));*/
-              openSite("https://trello.com");
+        returnToHomePage();
+
     }
 
 }

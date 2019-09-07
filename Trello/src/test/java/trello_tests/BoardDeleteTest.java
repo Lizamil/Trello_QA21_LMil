@@ -9,13 +9,13 @@ public class BoardDeleteTest extends TestBase {
     public void boardDelete(){
         clickOnBoardButtonOnHeader();
         selectSeeCloseBoardsFromDropDown();
-        deleteBoardByName("25856");
+        //list closed boards more than monitor ???????????????????????????
+        deleteBoardByName("forclose");
+        deleteBoardByName("board_test2_team");
+        deleteBoardByName("board_no_private_5");
+        deleteBoardByName("board_no_private_4");
+        deleteBoardByName("board_no_private_3");
+        deleteBoardByName("board_no_private_2");
     }
 
-    public void deleteBoardByName(String boardName) {
-        if(isElementPresent(By.xpath("//ul[@class='_3Qi2qlYDnzYhMI']/li//a[contains(text(),'"+boardName+"')]"))) {
-            click(By.xpath("//ul[@class='_3Qi2qlYDnzYhMI']/li//a[contains(text(),'" + boardName + "')]/../..//span[@ name='remove']"));
-        click(By.cssSelector("._3G2HCCjNJGfeNW"));}
-        else System.out.println("This board doesn't exist");
-    }
 }
