@@ -1,39 +1,56 @@
 package trello_tests;
 
-import net.bytebuddy.utility.JavaModule;
-import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class BoardCloseTests extends TestBase {
-/*
-1."qa22_team" --             2."qa22_private" --                 3."board_qa21_private_113"
-4."board_no_private_13" -+   5."board_no_private_1" +            6."board_no_private_113" +
-7."err_private" --           8."err_public" --                   9."err_team" +
-10."no_public" --            11."no_private" +                   12."qa22_public" --
-13."no_team" +               14."board_autoaTeam_private" --     15."board_team2_public" --
-* */
+
     @Test
     public void close01() throws InterruptedException {
-        returnToHomePage();
-        String boardName = "qa22_team";
+        int before = getPersonalBoardsCount() + getTeamBoardsCount();
+
+        String boardName = "menuClose2"; //Menu is closed
         closeBoard(boardName);
+        returnToHomePage();
+        int after = getPersonalBoardsCount() + getTeamBoardsCount();
+        Assert.assertEquals(after, before - 1);
     }
+
     @Test
     public void close02() throws InterruptedException {
         returnToHomePage();
-        String boardName = "qa22_private";
+        int before = getPersonalBoardsCount() + getTeamBoardsCount();
+        String boardName = "menuOpen2"; //Menu is opened
         closeBoard(boardName);
+        returnToHomePage();
+        int after = getPersonalBoardsCount() + getTeamBoardsCount();
+        Assert.assertEquals(after, before - 1);
     }
-    @Test
+
+    @Test(enabled=false)
     public void close03() throws InterruptedException {
         returnToHomePage();
-        String boardName = "board_team2_public";
-        closeBoard(boardName);
+        int before = getPersonalBoardsCount() + getTeamBoardsCount();
+        String boardName = "aboutBoardOpen2"; //About this boards is opened
+        closeBoard2(boardName);
+        returnToHomePage();
+        int after = getPersonalBoardsCount() + getTeamBoardsCount();
+        Assert.assertEquals(after,before -1);
+
+
     }
 
 
+    @Test(enabled=false)
+    public void close04() throws InterruptedException {
+        returnToHomePage();
+        int before = getPersonalBoardsCount() + getTeamBoardsCount();
+        String boardName = "aboutBoardCloseButHas2"; //Menu is closed but after click About this boards opens
+        closeBoard2(boardName);
+        returnToHomePage();
+        int after = getPersonalBoardsCount() + getTeamBoardsCount();
+        Assert.assertEquals(after, before - 1);
+    }
 
 
 }
-

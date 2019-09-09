@@ -4,6 +4,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -22,8 +23,8 @@ public class TestBase {
 
     @AfterClass
     public void tearDown() throws InterruptedException {
-        Thread.sleep(2000);
-      //  driver.quit();
+     //Thread.sleep(2000);
+     driver.quit();
 
     }
 
@@ -64,13 +65,6 @@ public class TestBase {
         return driver.findElements(locator).size()>0;
     }
 
-    public boolean isElementVisible(By locator){
-        return driver.findElement(locator).isDisplayed();
-
-    }
-    public boolean isTeamExist(){
-    return driver.findElements(By.cssSelector("[class='icon-lg icon-organization']")).size()>0;
-    }
 
         //Board Create
     public int getTeamBoardsCount() {
@@ -85,7 +79,6 @@ public class TestBase {
                 By.xpath("//span[@class='icon-lg icon-member']/../../..//li")).size()-1;
 
     }
-
     public void createBoard(String boardTitle, String teamName, Integer status) {
         int countOfTeam =getTeamsCount();
         clickOnCreateNewBoardOnHomePage();
@@ -149,11 +142,15 @@ public class TestBase {
         click(By.cssSelector(".primary"));
 
     }
-
     public boolean isBoardExistsByNameCheckOnMainPage(String name) {
         return isElementPresent(By.cssSelector("[title="+name+"]"));
 
     }
+    public void selectCreateBoardFromDropDown() {
+        click(By.cssSelector("[data-test-id='header-create-board-button']"));
+
+    }
+
 
     //Board Close
     public void closeBoard(String boardName) throws InterruptedException {
@@ -163,85 +160,78 @@ public class TestBase {
         else {
             System.out.println("Board doesn't exist");
             return;}
-        //if open Menu
-        if(isElementPresent(By.cssSelector
-                    ("[class='board-menu-navigation-item-link js-about-this-board']"))==true && isElementVisible(
-      By.cssSelector("[class='board-menu-navigation-item-link js-about-this-board']")))
 
-        click((By.cssSelector("[title='Close the board menu.']")));
-
-        //if open About this Board Menu
-        if(isElementPresent(By.cssSelector
-                ("[class='board-menu-header-title js-board-menu-title-text']"))==true && isElementVisible(By.cssSelector
-                ("[class='board-menu-header-title js-board-menu-title-text']")))
-        click((By.cssSelector("[title='Go back.']")));
-
-
-        clickOnShowMenuButtonOnBoardPage();
-
-        if(isElementPresent(By.cssSelector
-                ("[class='board-menu-header-title js-board-menu-title-text']"))==true && isElementVisible(By.cssSelector
-                ("[class='board-menu-header-title js-board-menu-title-text']")))
-        { click((By.cssSelector("[title='Go back.']")));}
-
-        selectMoreInMenuOnBoardPage();
+        clickOnMoreButtonInBoardMenu();
         selectCloseBoardInMoreInMenuOnBoardPage();
         confirmCloseBoard();
-        returnToHomePage();
-        }
+               }
+    public void closeBoard2(String boardName) throws InterruptedException {
+        //check that the board exists and enter to the board Main Page
+        if (isElementPresent(By.xpath("//div[@title='"+boardName+"']")))
+            click(By.xpath("//div[@title='"+boardName+"']"));
+        else {
+            System.out.println("Board doesn't exist");
+            return;}
 
-    public void clickOnShowMenuButtonOnBoardPage() {
-        click(By.cssSelector("[class='board-header-btn mod-show-menu js-show-sidebar']"));
-
-    }
-    public void selectMoreInMenuOnBoardPage() {
-      click(By.cssSelector("[class='board-menu-navigation-item-link js-open-more']"));
-      //click(By.cssSelector("[class='icon-sm icon-overflow-menu-horizontal board-menu-navigation-item-link-icon']"));
+        clickOnMoreButtonInBoardMenu2();
+        selectCloseBoardInMoreInMenuOnBoardPage();
+        confirmCloseBoard();
     }
     public void selectCloseBoardInMoreInMenuOnBoardPage() {
-        click(By.cssSelector("[class='board-menu-navigation-item-link js-close-board']"));
+        click(By.cssSelector(".js-close-board"));
+
     }
     public void confirmCloseBoard() {
         click(By.cssSelector("[class='js-confirm full negate']"));
 
     }
-    public void selectCreateBoardFromDropDown() {
-        click(By.cssSelector("[data-test-id='header-create-board-button']"));
+    public void clickOnMoreButtonInBoardMenu() {   //var1 this method
+        WebElement menuButton = driver.findElement(By.cssSelector(".board-header-btn.mod-show-menu"));
+        System.out.println(menuButton.getCssValue("visibility"));
+        if(menuButton.getCssValue("visibility").equals("visible")){
+            clickOnShowMenuButtonOnBoardPage();
+            selectMoreInMenuOnBoardPage();
+        } else{
+            selectMoreInMenuOnBoardPage();
+        }
+    }
+    public void clickOnShowMenuButtonOnBoardPage() {
+        click(By.cssSelector(".mod-show-menu"));
+
+    }
+    public void selectMoreInMenuOnBoardPage() {
+        click(By.cssSelector(".js-open-more"));
+
+    }
+    public void clickOnMoreButtonInBoardMenu2() throws InterruptedException {
+        WebElement menuButton = driver.findElement(By.cssSelector(".board-header-btn.mod-show-menu"));
+        System.out.println(menuButton.getCssValue("visibility"));
+        if (menuButton.getCssValue("visibility").equals("visible")) {  //show menu button is visible
+            clickOnShowMenuButtonOnBoardPage();
+            ifOpenAboutThisBoardMenu();
+            selectMoreInMenuOnBoardPage();
+        } else { //show menu button isn't visible
+            ifOpenAboutThisBoardMenu();
+            selectMoreInMenuOnBoardPage();}
+    }
+    public void ifOpenAboutThisBoardMenu()  {
+        if (isElementPresent(By.cssSelector(".icon-member")))
+        { //Thread.sleep(3000);
+            click(By.cssSelector("[title='Go back.']"));}
 
     }
 
-    // find Elements
+
+    // For check logIn
     public boolean isUserLoggedIn() {
         return isElementPresent(By.name("house"));
 
     }
-
     public boolean isUserLoggedOut() {
         return isElementPresent(By.cssSelector("[href='/login']"));
 
     }
 
-    public void fillTeamCreationForm(String teamName, String description) {
-        type(By.cssSelector("[data-test-id='header-create-team-name-input']"),teamName);
-        type(By.cssSelector("textarea"),description);
-
-    }
-
-
-    public void reOpenBoardByName(String boardName) {
-        if(isElementPresent(By.xpath("//ul[@class='_3Qi2qlYDnzYhMI']/li//a[contains(text(),'"+boardName+"')]")))
-            click(By.xpath("//ul[@class='_3Qi2qlYDnzYhMI']/li//a[contains(text(),'"+boardName+"')]/../..//span[@ name='refresh']"));
-        else System.out.println("This board doesn't exist");
-
-    }
-    public void selectSeeCloseBoardsFromDropDown() {
-        click(By.cssSelector("[data-test-id='header-boards-menu-open-closed']"));
-
-    }
-    public void clickOnBoardButtonOnHeader() {
-        click(By.cssSelector("[data-test-id='header-boards-menu-button']"));
-
-    }
 
     //Team
     public void teamCreation(String teamName) {
@@ -249,6 +239,11 @@ public class TestBase {
        clickContinueButtonInTeamCreationForm();
 
            }
+    public void fillTeamCreationForm(String teamName, String description) {
+        type(By.cssSelector("[data-test-id='header-create-team-name-input']"),teamName);
+        type(By.cssSelector("textarea"),description);
+
+    }
     public void clickContinueButtonInTeamCreationForm() {
         click(By.cssSelector("[type='submit']"));
 
@@ -270,16 +265,54 @@ public class TestBase {
 
     }
 
+    //Board Delete
+    public void selectSeeCloseBoardsFromDropDown() {
+        click(By.cssSelector("[data-test-id='header-boards-menu-open-closed']"));
+
+    }
+    public void clickOnBoardButtonOnHeader() {
+        click(By.cssSelector("[data-test-id='header-boards-menu-button']"));
+
+    }
+    public void deleteBoardByNameFromClosedBoardsForm(String boardName) {
+        if(isElementPresent(By.xpath("//ul[@class='_3Qi2qlYDnzYhMI']/li//a[contains(text(),'"+boardName+"')]"))) {
+            click(By.xpath("//ul[@class='_3Qi2qlYDnzYhMI']/li//a[contains(text(),'" + boardName + "')]/../..//span[@ name='remove']"));
+        click(By.cssSelector("._3G2HCCjNJGfeNW"));}
+        else System.out.println("This board doesn't exist");
+    }
+    public void deleteFirstPesonalBoardFromHomePage() {
+        click(By.xpath("//span[@class='icon-lg icon-member']/../../..//li"));
+        clickOnMoreButtonInBoardMenu();
+        selectCloseBoardInMoreInMenuOnBoardPage();
+        confirmCloseBoard();
+        click(By.cssSelector(".js-delete"));
+        click(By.cssSelector(".js-confirm"));
+
+    }
+    public void closeClosedBoardsForm() {
+        click(By.cssSelector("[class='_2BQG4yPMt5s_hu lAz6zCcJVJePNN _20uPs4MFhz7Z5r _3TXPFC9AbvtH0v iV27mPo7If_zwQ vmfY4Z5HOr-J1T']"));
+    }
+    public int getClosedBoardsCount() {
+        return driver.findElements(
+                By.xpath("//ul[@class='_3Qi2qlYDnzYhMI']/li")).size();
+    }
+
+
+
+    public void reOpenBoardByName(String boardName) {
+        if(isElementPresent(By.xpath("//ul[@class='_3Qi2qlYDnzYhMI']/li//a[contains(text(),'"+boardName+"')]")))
+            click(By.xpath("//ul[@class='_3Qi2qlYDnzYhMI']/li//a[contains(text(),'"+boardName+"')]/../..//span[@ name='refresh']"));
+        else System.out.println("This board doesn't exist");
+
+    }
 
 
     public void clickByContains(String teamName) {
         click(By.xpath("//a[@href='#']//div[contains(text(),'" + teamName + "')]"));
     }
 
-    public void deleteBoardByName(String boardName) {
-        if(isElementPresent(By.xpath("//ul[@class='_3Qi2qlYDnzYhMI']/li//a[contains(text(),'"+boardName+"')]"))) {
-            click(By.xpath("//ul[@class='_3Qi2qlYDnzYhMI']/li//a[contains(text(),'" + boardName + "')]/../..//span[@ name='remove']"));
-        click(By.cssSelector("._3G2HCCjNJGfeNW"));}
-        else System.out.println("This board doesn't exist");
-    }
+
+
+
 }
+
