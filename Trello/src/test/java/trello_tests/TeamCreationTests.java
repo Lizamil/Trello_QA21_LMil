@@ -1,13 +1,19 @@
 package trello_tests;
 
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-
 public class TeamCreationTests extends TestBase {
+    @BeforeClass
+public void ensurePreconditions(){
+        if(!isUserLoggedIn())
+            login("Lizamil@mail.ru","liza1978");
+    }
 
-   @Test
-   public void teamCreationFromPlusButtonOnHeader() throws InterruptedException {
+    @Test
+   public void teamCreationFromPlusButtonOnHeader() {
        int before=getTeamsCount();
        //path to Team create form From Plus Button On Header
        clickOnPlusButtonOnHeader();
@@ -25,12 +31,12 @@ public class TeamCreationTests extends TestBase {
        }
 
     @Test
-    public void teamCreationFromLeftNavButton() throws InterruptedException {
+    public void teamCreationFromLeftNavButton()  {
     int before=getTeamsCount();
     //path to Team create form From Left Navigation Button
     clickOnPlusButtonOnLeftNavigationMenu();
 
-    String teamName="qa21_new_new";
+    String teamName="qa21__"+System.currentTimeMillis();
     teamCreation(teamName);
     String createdTeamName=getTeamNameFromTeamPage();
 
@@ -42,17 +48,10 @@ public class TeamCreationTests extends TestBase {
 
 }
 
-    @Test
-    public void testIsUserLoggedIn_1(){
-        Assert.assertTrue(isUserLoggedIn());
-
+    @AfterClass
+    public void removeUnnecessaryTeams() {
+        while (getTeamsCount() > 4)
+            deleteFirstTeam();
     }
-
-    @Test
-    public void testIsUserLoggedIn_2(){
-        Assert.assertFalse(isUserLoggedOut());
-
-    }
-
 
 }

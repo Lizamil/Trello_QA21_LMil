@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="trello_tests.TeamDeleteTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-09-10T22:47:25" hostname="LAPTOP-QSAH0PNH" time="10.925">
+  <properties/>
+  <testcase name="deleteTeamWhileCountMoreThanNeedNumber" classname="trello_tests.TeamDeleteTest" time="10.925"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[Starting ChromeDriver 76.0.3809.68 (420c9498db8ce8fcd190a954d51297672c1515d5-refs/branch-heads/3809@{#864}) on port 10583
+Only local connections are allowed.
+Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
+[1568155521.261][WARNING]: Timed out connecting to Chrome, retrying...
+сен 11, 2019 1:45:29 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+[1568155536.927][WARNING]: Timed out connecting to Chrome, retrying...
+]]></system-err>
+</testsuite>
