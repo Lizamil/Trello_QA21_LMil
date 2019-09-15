@@ -8,41 +8,41 @@ import org.testng.annotations.Test;
 public class TeamCreationTests extends TestBase {
     @BeforeClass
 public void ensurePreconditions(){
-        if(!isUserLoggedIn())
-            login("Lizamil@mail.ru","liza1978");
+        if(!app.isUserLoggedIn())
+            app.login("Lizamil@mail.ru","liza1978");
     }
 
     @Test
    public void teamCreationFromPlusButtonOnHeader() {
-       int before=getTeamsCount();
+       int before= app.getTeamsCount();
        //path to Team create form From Plus Button On Header
-       clickOnPlusButtonOnHeader();
-       selectCreateTeamFromDropDown();
+       app.clickOnPlusButtonOnHeader();
+       app.selectCreateTeamFromDropDown();
 
-       String teamName="qa22";
-       teamCreation(teamName);
-       String createdTeamName=getTeamNameFromTeamPage();
+       String teamName="teamPlusBut_"+System.currentTimeMillis();;
+       app.teamCreation(teamName);
+       String createdTeamName= app.getTeamNameFromTeamPage();
 
-       returnToHomePage();
+       app.returnToHomePage();
 
-       int after=getTeamsCount();
+       int after= app.getTeamsCount();
        Assert.assertEquals(after,before+1);
        Assert.assertEquals(createdTeamName,teamName);
        }
 
     @Test
     public void teamCreationFromLeftNavButton()  {
-    int before=getTeamsCount();
+    int before= app.getTeamsCount();
     //path to Team create form From Left Navigation Button
-    clickOnPlusButtonOnLeftNavigationMenu();
+    app.clickOnPlusButtonOnLeftNavigationMenu();
 
     String teamName="qa21__"+System.currentTimeMillis();
-    teamCreation(teamName);
-    String createdTeamName=getTeamNameFromTeamPage();
+    app.teamCreation(teamName);
+    String createdTeamName= app.getTeamNameFromTeamPage();
 
-    returnToHomePage();
+    app.returnToHomePage();
 
-    int after=getTeamsCount();
+    int after= app.getTeamsCount();
     Assert.assertEquals(after,before+1);
     Assert.assertEquals(createdTeamName,teamName);
 
@@ -50,8 +50,8 @@ public void ensurePreconditions(){
 
     @AfterClass
     public void removeUnnecessaryTeams() {
-        while (getTeamsCount() > 4)
-            deleteFirstTeam();
+        while (app.getTeamsCount() > 4)
+            app.deleteFirstTeam();
     }
 
 }
