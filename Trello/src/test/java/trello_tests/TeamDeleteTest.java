@@ -1,6 +1,7 @@
 package trello_tests;
 
 
+import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -8,32 +9,34 @@ import org.testng.annotations.Test;
 public class TeamDeleteTest extends TestBase {
 
     @BeforeMethod
-    public void isTeamExist() {
-        if (app.getTeamsCount() == 0) {
-            app.clickOnPlusButtonOnHeader();
-            app.selectCreateTeamFromDropDown();
-            app.teamCreation("team1");
+       public void isTeamExist() {
+        if(app.getTeamHelper().getTeamsCount()==0)
+            {
+            app.getTeamHelper().clickOnPlusButtonOnHeader();
+            app.getTeamHelper().selectCreateTeamFromDropDown();
+            app.getTeamHelper().teamCreation("team1");
+            app.getTeamHelper().returnToHomePage();
         }
     }
 
     @Test
 
-    public void deleteTeamFromLeftNavMenu() {
-        int before = app.getTeamsCount();
-        app.deleteFirstTeam();
-       // returnToHomePage();
-        int after = app.getTeamsCount();
+    public void deleteTeamFromLeftNavMenu() throws InterruptedException {
+        int before = app.getTeamHelper().getTeamsCount();
+        app.getTeamHelper().deleteFirstTeam();
+
+        int after = app.getTeamHelper().getTeamsCount();
         Assert.assertEquals(after, before - 1);
 
     }
 
     @Test (enabled=false)
-    public void deleteTeamWhileCountMoreThanNeedNumber() {
+    public void deleteTeamWhileCountMoreThanNeedNumber() throws InterruptedException {
         int needCount = 4;
-        int countTeam = app.getTeamsCount();
+        int countTeam = app.getTeamHelper().getTeamsCount();
         while (countTeam > needCount) {
-            app.deleteFirstTeam();
-            countTeam = app.getTeamsCount();
+            app.getTeamHelper().deleteFirstTeam();
+            countTeam = app.getTeamHelper().getTeamsCount();
         }
         Assert.assertEquals(needCount, needCount);
     }

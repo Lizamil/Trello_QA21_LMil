@@ -9,12 +9,13 @@ public class TestBase {
     @BeforeSuite
     public void setUP() {
         app.init();
+
     }
 
     @BeforeMethod
     public void isOnHomePage() {
-        if (!app.isThereBoardsPresent())
-            app.returnToHomePage();
+        if (!app.getBoardHelper().isThereBoardsPresent())
+            app.getSessionHelper().returnToHomePage();
     }
 
     @AfterSuite
