@@ -1,13 +1,13 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="Trello1" verbose="1" >
+<suite name="Trello1" verbose="1">
 
-    <test name="RegressionTrello">
+    <test name="ModificationTrello">
         <classes>
-            <class name="trello_tests.TeamCreationTests"/>
-            <class name="trello_tests.TeamDeleteTest"/>
-            <class name="trello_tests.BoardCreationTests"/>
-            <class name="trello_tests.BoardDeleteTest"/>
+
+            <class name="trello_tests.tests.TeamModificationTest"/>
+            <class name="trello_tests.tests.BoardModificationTest"/>
+
         </classes>
     </test>
 </suite>

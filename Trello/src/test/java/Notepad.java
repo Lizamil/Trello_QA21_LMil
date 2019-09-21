@@ -54,10 +54,12 @@ public void close() {
         }
     }
 
- <class name="trello_tests.TeamCreationTests"/>
-            <class name="trello_tests.TeamDeleteTest"/>
-            <class name="trello_tests.BoardCreationTests"/>
-            <class name="trello_tests.BoardDeleteTest"/>
+   <class name="trello_tests.tests.TeamCreationTests"/>
+            <class name="trello_tests.tests.TeamModificationTest"/>
+            <class name="trello_tests.tests.TeamDeleteTest"/>
+            <class name="trello_tests.tests.BoardCreationTests"/>
+            <class name="trello_tests.tests.BoardModificationTest"/>
+            <class name="trello_tests.tests.BoardDeleteTest"/>
 
   */
 

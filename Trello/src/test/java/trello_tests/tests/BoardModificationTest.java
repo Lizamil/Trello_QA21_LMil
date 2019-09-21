@@ -1,0 +1,44 @@
+package trello_tests.tests;
+
+import org.openqa.selenium.By;
+import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+public class BoardModificationTest extends TestBase {
+
+    @BeforeMethod
+    public void isBoardExist() {
+        if (app.getBoardHelper().getPersonalBoardsCount() == 0)
+            app.getBoardHelper().createBoardFromCreateBoardButton("a1", "no", 0);
+    }
+
+    @Test
+
+    public void testAddListOnBoard() {
+        app.getBoardHelper().clickOnFirstBoard();
+        int before = app.getBoardHelper().getListCount();
+        String listName = "aaa3";
+        app.getBoardHelper().click(By.cssSelector(".placeholder"));
+        app.getBoardHelper().type(By.cssSelector(".list-name-input"), listName);
+        app.getBoardHelper().confirmnOnBoardIPage();
+        int after = app.getBoardHelper().getListCount();
+        Assert.assertEquals(after, before + 1);
+        app.getTeamHelper().returnToHomePage();
+    }
+
+    @Test
+
+    public void testRenameBoard() {
+        app.getBoardHelper().clickOnFirstBoard();
+        String boardNameCurrent=app.getBoardHelper().getBoardNameFromBoardPage();
+        String boardNameNew = "_rename"+System.currentTimeMillis();
+        app.getBoardHelper().renameBoard(boardNameNew,boardNameCurrent);
+        Assert.assertEquals(app.getBoardHelper().getBoardNameFromBoardPage(), boardNameNew);
+        app.getTeamHelper().returnToHomePage();
+    }
+
+
+
+
+}
