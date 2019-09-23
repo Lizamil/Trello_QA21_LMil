@@ -4,19 +4,21 @@ import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import trello_tests.manager.TeamData;
 
 public class TeamModificationTest extends TestBase {
 
-    @BeforeMethod
-    public void isTeamExist() {
-        if(app.getTeamHelper().getTeamsCount()==0)
-        {
-            app.getTeamHelper().clickOnPlusButtonOnHeader();
-            app.getTeamHelper().selectCreateTeamFromDropDown();
-            app.getTeamHelper().teamCreation("team1");
-            app.getTeamHelper().returnToHomePage();
-        }
-    }
+//    @BeforeMethod
+//    public void isTeamExist(String teamName, String description) {
+//        if(app.getTeamHelper().getTeamsCount()==0)
+//        {
+//            TeamData team = new TeamData().withTeamName(teamName).withDescription(description);
+//            app.getTeamHelper().clickOnPlusButtonOnHeader();
+//            app.getTeamHelper().selectCreateTeamFromDropDown();
+//            app.getTeamHelper().teamCreation(team);
+//            app.getTeamHelper().returnToHomePage();
+//        }
+//    }
 
     @Test
 

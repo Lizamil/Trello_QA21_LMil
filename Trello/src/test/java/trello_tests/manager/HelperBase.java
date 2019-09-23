@@ -16,9 +16,10 @@ public class HelperBase {
 
     //Base Methods
     public void type(By locator, String text) {
+        if(text!=null){
         click(locator);
         driver.findElement(locator).clear();
-        driver.findElement(locator).sendKeys(text);
+        driver.findElement(locator).sendKeys(text);}
 
 
     }
@@ -72,10 +73,12 @@ public class HelperBase {
 
     }
     public void clickOnPlusButtonOnHeader() {
-
-        click(By.name("add"));
+        waitPresenceElement(By.cssSelector("[data-test-id='header-create-menu-button']"),15);
+        click(By.cssSelector("[data-test-id='header-create-menu-button']"));
 
     }
+
+
 
     public void clickEnter() {
         driver.findElement(By.cssSelector("[class='board-name-input js-board-name-input']")).sendKeys(Keys.ENTER);

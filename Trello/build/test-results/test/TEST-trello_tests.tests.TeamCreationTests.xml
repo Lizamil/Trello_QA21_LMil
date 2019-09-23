@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="trello_tests.tests.TeamCreationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-09-23T20:54:06" hostname="LAPTOP-QSAH0PNH" time="36.821">
+  <properties/>
+  <testcase name="testTeamCreationFromPlusButtonOnHeader_Elena" classname="trello_tests.tests.TeamCreationTests" time="36.821"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

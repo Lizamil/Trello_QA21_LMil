@@ -13,22 +13,22 @@ public class TeamHelper extends HelperBase{
     }
 
     //Team Create
-    public void teamCreation(String teamName) {
-        fillTeamCreationForm(teamName, "description qa 21");
+    public void teamCreation(TeamData team) {
+        fillTeamCreationForm(team);
         clickContinueButtonInTeamCreationForm();
 
     }
 
-    public void fillTeamCreationForm(String teamName, String description) {
-        type(By.cssSelector("[data-test-id='header-create-team-name-input']"), teamName);
-        type(By.cssSelector("textarea"), description);
-
+    public void fillTeamCreationForm(TeamData team) {
+        type(By.cssSelector("[data-test-id='header-create-team-name-input']"), team.getTeamName());
+        type(By.cssSelector("textarea"), team.getDescription());
     }
 
     public void clickContinueButtonInTeamCreationForm() {
         click(By.cssSelector("[type='submit']"));
 
     }
+
 
     public void selectCreateTeamFromDropDown() {
         click(By.cssSelector("[data-test-id='header-create-team-button']"));

@@ -34,11 +34,20 @@ public class BoardModificationTest extends TestBase {
         String boardNameCurrent=app.getBoardHelper().getBoardNameFromBoardPage();
         String boardNameNew = "_rename"+System.currentTimeMillis();
         app.getBoardHelper().renameBoard(boardNameNew,boardNameCurrent);
-        Assert.assertEquals(app.getBoardHelper().getBoardNameFromBoardPage(), boardNameNew);
+        Assert.assertEquals(boardNameCurrent, boardNameNew);
         app.getTeamHelper().returnToHomePage();
     }
 
+    @Test
 
+    public void testRenameBoard2() {
+        app.getBoardHelper().clickOnFirstBoard();
+        String boardNameCurrent=app.getBoardHelper().getBoardNameFromBoardPage();
+        String boardNameNew = "_rename"+System.currentTimeMillis();
+        app.getBoardHelper().renameBoardShort(boardNameNew,boardNameCurrent);
+        Assert.assertEquals(boardNameCurrent, boardNameNew);
+        app.getTeamHelper().returnToHomePage();
+    }
 
 
 }
