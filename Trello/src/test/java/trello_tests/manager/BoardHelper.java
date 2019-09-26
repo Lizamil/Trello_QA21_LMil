@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import trello_tests.model.BoardData;
 
 public class BoardHelper extends HelperBase {
 
@@ -39,7 +40,7 @@ public class BoardHelper extends HelperBase {
     public void createBoardFromCreateBoardButton(String boardTitle, String teamName, int status) {
         int countOfTeam = getTeamsCount();
         clickOnCreateNewBoardOnHomePage();
-        fillBoardCreationForm(boardTitle);
+        fillBoardCreationForm(new BoardData().withBoardTitle(boardTitle));
         int IndexTeam = enterTeamNameToCreateBoardViaCreateBoardButton(teamName, countOfTeam);
         enterBoardStatusToCreateBoardViaCreateBoardButton(teamName, countOfTeam, status, IndexTeam);
         confirmnOnBoardIPage();
@@ -51,8 +52,8 @@ public class BoardHelper extends HelperBase {
 
     }
 
-    public void fillBoardCreationForm(String boardTitle) {
-        type(By.cssSelector("[placeholder='Add board title']"), boardTitle);
+    public void fillBoardCreationForm(BoardData boardData) {
+        type(By.cssSelector("[placeholder='Add board title']"), boardData.getBoardTitle());
 
     }
 
@@ -110,7 +111,7 @@ public class BoardHelper extends HelperBase {
         int countOfTeam = getTeamsCount();
         clickOnPlusButtonOnHeader();
         selectCreateBoardFromDropDown();
-        fillBoardCreationForm(boardTitle);
+        fillBoardCreationForm(new BoardData().withBoardTitle(boardTitle));
         int IndexTeam = enterTeamNameToCreateBoardViaPlusButtonOnHeader(teamName, countOfTeam);
         enterBoardStatusToCreateBoardViaPlusButtonOnHeader(teamName, countOfTeam, status, IndexTeam);
         click(By.cssSelector("[type='button']"));//confirm Create

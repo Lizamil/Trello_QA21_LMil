@@ -2,6 +2,7 @@ package trello_tests.manager;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import trello_tests.model.TeamData;
 
 
 public class TeamHelper extends HelperBase{
@@ -48,13 +49,13 @@ public class TeamHelper extends HelperBase{
         openSettings();
         deleteTeam();
         confirm();
-        returnToHomePage();
+  //      returnToHomePage();
 
     }
 
     public void cleanTeams() throws InterruptedException {
         int count = getTeamsCount();
-        while (count > 5) {
+        while (count > 10) {
             deleteFirstTeam();
             count = getTeamsCount();
                   }
@@ -64,15 +65,16 @@ public class TeamHelper extends HelperBase{
 
 
     public void deleteTeam() throws InterruptedException {
-Thread.sleep(5);
+       Thread.sleep(2000);
         waitPresenceElement(By.cssSelector(".quiet-button"), 15);
         click(By.cssSelector(".quiet-button"));
 
     }
 
-    public void openSettings() {
-
-        click(By.cssSelector(".icon-gear.icon-sm.OiX3P2i2J92Xat"));
+    public void openSettings() throws InterruptedException {
+        Thread.sleep(2000);
+        waitPresenceElement(By.cssSelector(".icon-gear.icon-sm"),10);
+        click(By.cssSelector(".icon-gear.icon-sm")); // was .icon-gear.icon-sm.OiX3P2i2J92Xat
     }
 
     public void clickOnFirstTeam() {

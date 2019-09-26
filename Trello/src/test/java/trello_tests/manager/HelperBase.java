@@ -60,8 +60,8 @@ public class HelperBase {
     }
 
     public int getTeamsCount() {
-        if (!isElementPresent(By.cssSelector(".icon-organization.icon-sm.OiX3P2i2J92Xat")))
-            return 0;
+//        if (!isElementPresent(By.cssSelector(".icon-organization.icon-sm.OiX3P2i2J92Xat")))
+//            return 0;
         waitPresenceElement(By.xpath("//div[@class='_mtkwfAlvk6O3f']/../../..//li"), 15);
         return driver.findElements(By.xpath("//div[@class='_mtkwfAlvk6O3f']/../../..//li")).size();
     }

@@ -1,4 +1,4 @@
-package trello_tests.manager;
+package trello_tests.model;
 
 public class TeamData {
     private String teamName;
