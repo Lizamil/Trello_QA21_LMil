@@ -5,9 +5,9 @@
     <test name="ModificationTrello">
         <classes>
 
-            
+
             <class name="trello_tests.tests.BoardCreationTests"/>
-            <class name="trello_tests.tests.BoardModificationTest"/>
+
             <class name="trello_tests.tests.BoardDeleteTest"/>
 
         </classes>
