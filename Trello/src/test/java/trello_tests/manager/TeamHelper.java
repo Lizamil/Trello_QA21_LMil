@@ -5,8 +5,7 @@ import org.openqa.selenium.WebDriver;
 import trello_tests.model.TeamData;
 
 
-public class TeamHelper extends HelperBase{
-
+public class TeamHelper extends HelperBase {
 
 
     public TeamHelper(WebDriver driver) {
@@ -17,6 +16,8 @@ public class TeamHelper extends HelperBase{
     public void teamCreation(TeamData team) {
         fillTeamCreationForm(team);
         clickContinueButtonInTeamCreationForm();
+        click(By.cssSelector(".eg0KI5SqghoOFd"));
+
 
     }
 
@@ -38,7 +39,7 @@ public class TeamHelper extends HelperBase{
 
     public String getTeamNameFromTeamPage() {
 
-       waitPresenceElement(By.cssSelector("h1"), 15);
+        waitPresenceElement(By.cssSelector("h1"), 15);
         return driver.findElement(By.cssSelector("h1")).getText();
 
     }
@@ -49,7 +50,7 @@ public class TeamHelper extends HelperBase{
         openSettings();
         deleteTeam();
         confirm();
-  //      returnToHomePage();
+        //      returnToHomePage();
 
     }
 
@@ -58,14 +59,12 @@ public class TeamHelper extends HelperBase{
         while (count > 10) {
             deleteFirstTeam();
             count = getTeamsCount();
-                  }
+        }
     }
 
 
-
-
     public void deleteTeam() throws InterruptedException {
-       Thread.sleep(2000);
+        Thread.sleep(2000);
         waitPresenceElement(By.cssSelector(".quiet-button"), 15);
         click(By.cssSelector(".quiet-button"));
 
@@ -73,12 +72,12 @@ public class TeamHelper extends HelperBase{
 
     public void openSettings() throws InterruptedException {
         Thread.sleep(2000);
-        waitPresenceElement(By.cssSelector(".icon-gear.icon-sm"),10);
+        waitPresenceElement(By.cssSelector(".icon-gear.icon-sm"), 10);
         click(By.cssSelector(".icon-gear.icon-sm")); // was .icon-gear.icon-sm.OiX3P2i2J92Xat
     }
 
     public void clickOnFirstTeam() {
-        waitPresenceElement(By.xpath("//div[@class='_mtkwfAlvk6O3f']/../../..//li"),10);
+        waitPresenceElement(By.xpath("//div[@class='_mtkwfAlvk6O3f']/../../..//li"), 10);
         click(By.xpath("//div[@class='_mtkwfAlvk6O3f']/../../..//li[1]"));
 
     }
@@ -93,9 +92,9 @@ public class TeamHelper extends HelperBase{
         click(By.cssSelector(".js-edit-profile"));
     }
 
-    public void changeTeamProfile(String newName,String description) {
-        type(By.name("displayName"),newName);
-        type(By.name("desc"),description);
+    public void changeTeamProfile(String newName, String description) {
+        type(By.name("displayName"), newName);
+        type(By.name("desc"), description);
 
     }
 
@@ -104,8 +103,8 @@ public class TeamHelper extends HelperBase{
         click(By.cssSelector(".js-submit-profile"));
     }
 
-    public String getTeamDescription()  {
+    public String getTeamDescription() {
         waitPresenceElement(By.cssSelector(".tabbed-pane-header-details-content"), 15);
-              return driver.findElement(By.cssSelector(".tabbed-pane-header-details-content")).getText();
+        return driver.findElement(By.cssSelector(".tabbed-pane-header-details-content")).getText();
     }
 }

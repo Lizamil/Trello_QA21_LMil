@@ -1,6 +1,7 @@
 package trello_tests.tests;
 
 import com.google.common.collect.ArrayListMultimap;
+import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -56,6 +57,7 @@ public class TeamCreationTests extends TestBase {
         app.getTeamHelper().clickOnPlusButtonOnHeader();
         app.getTeamHelper().selectCreateTeamFromDropDown();
         app.getTeamHelper().teamCreation(team);
+
         String createdTeamName = app.getTeamHelper().getTeamNameFromTeamPage();
         app.getTeamHelper().returnToHomePage();
         int after = app.getTeamHelper().getTeamsCount();

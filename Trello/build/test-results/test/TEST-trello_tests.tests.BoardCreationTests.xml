@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="trello_tests.tests.BoardCreationTests" tests="3" skipped="0" failures="0" errors="0" timestamp="2019-10-03T15:54:15" hostname="LAPTOP-QSAH0PNH" time="107.161">
-  <properties/>
-  <testcase name="createBoardFromCreateBoardButtonDPTest[0](board)" classname="trello_tests.tests.BoardCreationTests" time="38.19"/>
-  <testcase name="createBoardFromCreateBoardButtonDPTest[1](BOARD)" classname="trello_tests.tests.BoardCreationTests" time="35.296"/>
-  <testcase name="createBoardFromCreateBoardButtonDPTest[2](board13)" classname="trello_tests.tests.BoardCreationTests" time="33.608"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

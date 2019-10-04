@@ -327,7 +327,7 @@ public class BoardHelper extends HelperBase {
 
     }
 
-    public void renameBoardShort(String newName, String boardNameCurrent) {
+    public void renameBoardShort(String newName) {
        click(By.cssSelector(".js-rename-board"));
        sendText(By.cssSelector("input.js-board-name-input"), newName + "\n");
     }
