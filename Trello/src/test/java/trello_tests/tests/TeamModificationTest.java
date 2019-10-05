@@ -25,7 +25,7 @@ public class TeamModificationTest extends TestBase {
         app.getTeamHelper().clickOnFirstTeam();
         app.getTeamHelper().openSettings();
         app.getTeamHelper().initEditTeamProfile();
-        String nameTeam = "team_" + System.currentTimeMillis();
+        String nameTeam = "rename_team";
         String des = "newDescription";
         app.getTeamHelper().changeTeamProfile(nameTeam, des);
         app.getTeamHelper().confirmEditTeam();
