@@ -9,10 +9,9 @@ import trello_tests.model.TeamData;
 public class TeamDeleteTest extends TestBase {
 
     @BeforeMethod
-       public void isTeamExist(String teamName, String description) {
-        if(app.getTeamHelper().getTeamsCount()==0)
-            {
-                TeamData team = new TeamData().withTeamName(teamName).withDescription(description);
+    public void isTeamExist() {
+        if (app.getTeamHelper().getTeamsCount() == 0) {
+            TeamData team = new TeamData().withTeamName("team_1").withDescription("description");
             app.getTeamHelper().clickOnPlusButtonOnHeader();
             app.getTeamHelper().selectCreateTeamFromDropDown();
             app.getTeamHelper().teamCreation(team);
@@ -31,7 +30,7 @@ public class TeamDeleteTest extends TestBase {
 
     }
 
-    @Test (enabled=false)
+    @Test(enabled = false)
     public void deleteTeamWhileCountMoreThanNeedNumber() throws InterruptedException {
         int needCount = 4;
         int countTeam = app.getTeamHelper().getTeamsCount();
