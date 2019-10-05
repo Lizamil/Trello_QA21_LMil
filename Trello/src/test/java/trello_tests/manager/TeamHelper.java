@@ -56,7 +56,7 @@ public class TeamHelper extends HelperBase {
 
     public void cleanTeams() throws InterruptedException {
         int count = getTeamsCount();
-        while (count > 10) {
+        while (count > 7) {
             deleteFirstTeam();
             count = getTeamsCount();
         }

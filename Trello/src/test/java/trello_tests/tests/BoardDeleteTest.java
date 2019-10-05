@@ -4,13 +4,16 @@ package trello_tests.tests;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import trello_tests.model.BoardData;
 
 public class BoardDeleteTest extends TestBase {
 
     @BeforeMethod
     public void isBoardExist() {
-        if (app.getBoardHelper().getPersonalBoardsCount() == 0)
-            app.getBoardHelper().createBoardFromCreateBoardButton("a1", "no", 0);
+        if (app.getBoardHelper().getPersonalBoardsCount() == 0) {
+            BoardData board = new BoardData().withBoardTitle("a1");
+            app.getBoardHelper().createBoardFromCreateBoardButton(board, "no", 0);
+        }
     }
 
     @Test

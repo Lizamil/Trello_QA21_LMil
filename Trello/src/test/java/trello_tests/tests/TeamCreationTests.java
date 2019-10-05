@@ -1,7 +1,5 @@
 package trello_tests.tests;
 
-import com.google.common.collect.ArrayListMultimap;
-import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -9,12 +7,19 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import trello_tests.model.TeamData;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
 
 public class TeamCreationTests extends TestBase {
+
+    @BeforeClass
+    public void ensurePreconditions() {
+        if (!app.getSessionHelper().isUserLoggedIn())
+            app.getSessionHelper().login("Lizamil@mail.ru", "liza1978");
+    }
 
     @DataProvider
     public Iterator<Object[]> validTeams() {
@@ -27,27 +32,20 @@ public class TeamCreationTests extends TestBase {
         list.add(new Object[]{"name", ""});
         return list.iterator();
     }
-//
-//    @DataProvider
-//    public Iterator<Object[]> validTeamsfromcsv() throws IOException {
-//        List<Object[]> list = new ArrayList<>();
-//        BufferedReader reader = new BufferedReader(
-//                new FileReader(new File("src/test/resources/Team.csv")));
-//        String line = reader.readLine();
-//        while (line != null) {
-//            String[] split = line.split(",");
-//            list.add(new Object[]{new TeamData().withTeamName(split[0]).withDescription(split[1])});
-//            line = reader.readLine();
-//        }
-//        return list.iterator();
-//    }
 
-    @BeforeClass
-    public void ensurePreconditions() {
-        if (!app.getSessionHelper().isUserLoggedIn())
-            app.getSessionHelper().login("Lizamil@mail.ru", "liza1978");
+    @DataProvider
+    public Iterator<Object[]> validTeamsfromCSV() throws IOException {
+        List<Object[]> list = new ArrayList<>();
+        BufferedReader reader = new BufferedReader(
+                new FileReader(new File("src/test/resources/Team.csv")));
+        String line = reader.readLine();
+        while (line != null) {
+            String[] split = line.split(",");
+            list.add(new Object[]{new TeamData().withTeamName(split[0]).withDescription(split[1])});
+            line = reader.readLine();
+        }
+        return list.iterator();
     }
-
 
     @Test(dataProvider = "validTeams")
     public void teamCreationWithDataProvider(String teamName, String description) {
@@ -65,24 +63,22 @@ public class TeamCreationTests extends TestBase {
         Assert.assertEquals(after, before + 1);
         Assert.assertEquals(createdTeamName, teamName);
     }
-//
-//
-//    @Test(dataProvider = "validTeamsfromcsv")
-//    public void teamCreationFromPlusButtonOnHeader(String teamName, String description) {
-//        TeamData team = new TeamData().withTeamName(teamName).withDescription(description);
-//        int before = app.getSessionHelper().getTeamsCount();
-//        //path to Team create form From Plus Button On Header
-//        app.getTeamHelper().clickOnPlusButtonOnHeader();
-//        app.getTeamHelper().selectCreateTeamFromDropDown();
-//        app.getTeamHelper().teamCreation(team);
-//        String createdTeamName = app.getTeamHelper().getTeamNameFromTeamPage();
-//
-//        app.getTeamHelper().returnToHomePage();
-//
-//        int after = app.getTeamHelper().getTeamsCount();
-//        Assert.assertEquals(after, before + 1);
-//        Assert.assertEquals(createdTeamName, teamName);
-//    }
+
+
+    @Test(dataProvider = "validTeamsfromCSV")
+    public void teamCreationFromPlusButtonOnHeaderfromCSV(TeamData team) {
+
+        int before = app.getSessionHelper().getTeamsCount();
+
+        app.getTeamHelper().clickOnPlusButtonOnHeader();
+        app.getTeamHelper().selectCreateTeamFromDropDown();
+        app.getTeamHelper().teamCreation(team);
+        app.getTeamHelper().returnToHomePage();
+
+        int after = app.getTeamHelper().getTeamsCount();
+        Assert.assertEquals(after, before + 1);
+
+    }
 
     @Test
     public void teamCreationFromLeftNavButton() {

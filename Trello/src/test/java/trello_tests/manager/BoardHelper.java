@@ -37,15 +37,27 @@ public class BoardHelper extends HelperBase {
     }
 
     //Create Board From Create Board Button
-    public void createBoardFromCreateBoardButton(String boardTitle, String teamName, int status) {
+    public void createBoardFromCreateBoardButton(BoardData board, String teamName, int status) {
         int countOfTeam = getTeamsCount();
         clickOnCreateNewBoardOnHomePage();
-        fillBoardCreationForm(new BoardData().withBoardTitle(boardTitle));
+        fillBoardCreationForm(board);
         int IndexTeam = enterTeamNameToCreateBoardViaCreateBoardButton(teamName, countOfTeam);
         enterBoardStatusToCreateBoardViaCreateBoardButton(teamName, countOfTeam, status, IndexTeam);
         confirmnOnBoardIPage();
 
     }
+
+    //Create Board From Plus Button On Header
+    public void createBoardFromPlusButtonOnHeader(BoardData board, String teamName, int status) {
+        int countOfTeam = getTeamsCount();
+        clickOnPlusButtonOnHeader();
+        selectCreateBoardFromDropDown();
+        fillBoardCreationForm(board);
+        int IndexTeam = enterTeamNameToCreateBoardViaPlusButtonOnHeader(teamName, countOfTeam);
+        enterBoardStatusToCreateBoardViaPlusButtonOnHeader(teamName, countOfTeam, status, IndexTeam);
+        click(By.cssSelector("[type='button']"));//confirm Create
+    }
+
 
     public void clickOnCreateNewBoardOnHomePage() {
         click(By.cssSelector(".board-tile.mod-add"));
@@ -106,16 +118,7 @@ public class BoardHelper extends HelperBase {
 
     }
 
-    //Create Board From Plus Button On Header
-    public void createBoardFromPlusButtonOnHeader(String boardTitle, String teamName, int status) {
-        int countOfTeam = getTeamsCount();
-        clickOnPlusButtonOnHeader();
-        selectCreateBoardFromDropDown();
-        fillBoardCreationForm(new BoardData().withBoardTitle(boardTitle));
-        int IndexTeam = enterTeamNameToCreateBoardViaPlusButtonOnHeader(teamName, countOfTeam);
-        enterBoardStatusToCreateBoardViaPlusButtonOnHeader(teamName, countOfTeam, status, IndexTeam);
-        click(By.cssSelector("[type='button']"));//confirm Create
-    }
+
 
     public void selectCreateBoardFromDropDown() {
         click(By.cssSelector("[data-test-id='header-create-board-button']"));
