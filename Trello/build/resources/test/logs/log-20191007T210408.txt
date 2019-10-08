@@ -1,0 +1,8 @@
+21:05:58.513 [Test worker] INFO  trello_tests.tests.TestBase - start test createBoardFromCreateBoardButtonfromCSV with parameters [BoardData{boardTitle='BoArD'}]
+21:07:17.265 [Test worker] INFO  trello_tests.tests.TestBase - stop test createBoardFromCreateBoardButtonfromCSV with parameters [BoardData{boardTitle='BoArD'}]
+21:11:26.535 [Test worker] INFO  trello_tests.tests.TestBase - start test createBoardFromCreateBoardButtonfromCSV with parameters [BoardData{boardTitle='ThisIsNoTeam'}]
+21:11:56.575 [Test worker] INFO  trello_tests.tests.TestBase - stop test createBoardFromCreateBoardButtonfromCSV with parameters [BoardData{boardTitle='ThisIsNoTeam'}]
+21:13:07.084 [Test worker] INFO  trello_tests.tests.TestBase - start test createBoardFromCreateBoardButtonfromCSV with parameters [BoardData{boardTitle='130449'}]
+21:13:37.118 [Test worker] INFO  trello_tests.tests.TestBase - stop test createBoardFromCreateBoardButtonfromCSV with parameters [BoardData{boardTitle='130449'}]
+21:14:47.758 [Test worker] INFO  trello_tests.tests.TestBase - start test createBoardFromCreateBoardButtonfromCSV with parameters [BoardData{boardTitle='@13*19\26%10'}]
+21:15:17.862 [Test worker] INFO  trello_tests.tests.TestBase - stop test createBoardFromCreateBoardButtonfromCSV with parameters [BoardData{boardTitle='@13*19\26%10'}]

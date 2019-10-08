@@ -1,12 +1,12 @@
 package trello_tests.tests;
 
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import trello_tests.model.BoardData;
-import trello_tests.model.TeamData;
+
 
 
 import java.io.*;

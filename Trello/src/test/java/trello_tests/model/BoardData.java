@@ -11,4 +11,9 @@ public class BoardData {
     public String getBoardTitle() {
         return boardTitle;
     }
+
+    @Override
+    public String toString() {
+        return "Board Title= " + boardTitle;
+    }
 }

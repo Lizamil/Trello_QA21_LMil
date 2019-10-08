@@ -99,9 +99,10 @@ public class TeamCreationTests extends TestBase {
     }
 
     @Test
+
     public void testTeamCreationFromPlusButtonOnHeader() {
-        String teamName="qa_plus_but_" + System.currentTimeMillis();
-        String description="description__" + System.currentTimeMillis();
+        String teamName="team_plus_but_" + System.currentTimeMillis();
+        String description="description__" + System.nanoTime();
         TeamData team = new TeamData().withTeamName(teamName).withDescription(description);
         int before = app.getTeamHelper().getTeamsCount();
 
