@@ -289,7 +289,7 @@ public class BoardHelper extends HelperBase {
 
 
     public void renameBoard(String newName, String boardNameCurrent) {
-        focusOn();
+        focusOn(By.cssSelector(".mod-board-name"));
         click(By.cssSelector("[class='board-name-input js-board-name-input']"));
         clearString(boardNameCurrent);
         sendText(By.cssSelector("[class='board-name-input js-board-name-input']"), newName + "\n");
@@ -305,8 +305,8 @@ public class BoardHelper extends HelperBase {
         return driver.findElements(By.xpath("//*[@class='list-header-target js-editing-target']")).size();
     }
 
-    public void focusOn(){
-        new Actions(driver).moveToElement(driver.findElement(By.cssSelector(".mod-board-name"))).click().perform();
+    public void focusOn(By locator){
+        new Actions(driver).moveToElement(driver.findElement(locator)).click().perform();
     }
 
 

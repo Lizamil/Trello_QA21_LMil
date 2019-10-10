@@ -1,10 +1,12 @@
 package trello_tests.manager;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
+import com.google.common.io.Files;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.io.File;
+import java.io.IOException;
 
 public class HelperBase {
 
@@ -87,5 +89,23 @@ public class HelperBase {
 
     public void sendText(By locator, String newBoardName) {
         driver.findElement(locator).sendKeys(newBoardName);
+    }
+
+public void takeScreenshot() {
+        File tmp = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        File screen = new File("src/test/resources/Screenshots/screen/"+System.currentTimeMillis()+".png");
+    try {
+        Files.copy(tmp,screen);
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+}
+
+    public void attach(File file) {
+        driver.findElement(By.name("file")).sendKeys(file.getAbsolutePath());
+    }
+
+    public void clickBoardButton() {
+       click(By.cssSelector("[href='/elizaveta528/boards']"));
     }
 }

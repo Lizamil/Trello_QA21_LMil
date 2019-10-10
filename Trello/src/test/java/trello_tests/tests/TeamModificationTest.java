@@ -33,7 +33,7 @@ public class TeamModificationTest extends TestBase {
         Assert.assertEquals(nameTeam, app.getTeamHelper().getTeamNameFromTeamPage());
         Assert.assertEquals(des, app.getTeamHelper().getTeamDescription());
         app.getTeamHelper().returnToHomePage();
-        app.getTeamHelper().click(By.cssSelector("[href='/elizaveta528/boards']"));
+        app.getTeamHelper().clickBoardButton();
         Thread.sleep(5000);
         }
 }

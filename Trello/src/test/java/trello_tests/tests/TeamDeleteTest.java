@@ -24,7 +24,7 @@ public class TeamDeleteTest extends TestBase {
     public void deleteTeamFromLeftNavMenu() throws InterruptedException {
         int before = app.getTeamHelper().getTeamsCount();
         app.getTeamHelper().deleteFirstTeam();
-
+        app.getTeamHelper().takeScreenshot();
         int after = app.getTeamHelper().getTeamsCount();
         Assert.assertEquals(after, before - 1);
 
