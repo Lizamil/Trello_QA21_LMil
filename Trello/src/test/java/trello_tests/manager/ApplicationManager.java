@@ -86,7 +86,7 @@ public class ApplicationManager {
         }
         driver.register(new MyListener());
 
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         teamHelper = new TeamHelper(driver);
         boardHelper = new BoardHelper(driver);
@@ -97,7 +97,6 @@ public class ApplicationManager {
     }
 
     public void stop() {
-        driver.quit();
         driver.quit();
         driver = null;
     }

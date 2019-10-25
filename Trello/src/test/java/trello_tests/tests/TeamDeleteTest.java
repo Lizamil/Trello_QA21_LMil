@@ -21,7 +21,7 @@ public class TeamDeleteTest extends TestBase {
 
     @Test
 
-    public void deleteTeamFromLeftNavMenu() throws InterruptedException {
+    public void deleteTeamFromLeftNavMenu() {
         int before = app.getTeamHelper().getTeamsCount();
         app.getTeamHelper().deleteFirstTeam();
         app.getTeamHelper().takeScreenshot();
@@ -31,7 +31,7 @@ public class TeamDeleteTest extends TestBase {
     }
 
     @Test(enabled = false)
-    public void deleteTeamWhileCountMoreThanNeedNumber() throws InterruptedException {
+    public void deleteTeamWhileCountMoreThanNeedNumber() {
         int needCount = 4;
         int countTeam = app.getTeamHelper().getTeamsCount();
         while (countTeam > needCount) {

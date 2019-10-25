@@ -18,9 +18,9 @@ public class UserHelper extends HelperBase {
         click(By.cssSelector("[data-test-id='header-member-menu-profile']"));
     }
 
-    public void addPicture(String pathname) throws InterruptedException {
+    public void addPicture(String pathname) {
         attach(new File(pathname));
-        Thread.sleep(7000);
+      //  Thread.sleep(1000);
     }
 
     public void clickOnChangeLanguage() {

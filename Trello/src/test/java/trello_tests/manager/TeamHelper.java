@@ -45,7 +45,7 @@ public class TeamHelper extends HelperBase {
     }
 
     //Team Delete
-    public void deleteFirstTeam() throws InterruptedException {
+    public void deleteFirstTeam()  {
         clickOnFirstTeam();
         openSettings();
         deleteTeam();
@@ -54,7 +54,7 @@ public class TeamHelper extends HelperBase {
 
     }
 
-    public void cleanTeams() throws InterruptedException {
+    public void cleanTeams() {
         int count = getTeamsCount();
         while (count > 7) {
             deleteFirstTeam();
@@ -63,15 +63,13 @@ public class TeamHelper extends HelperBase {
     }
 
 
-    public void deleteTeam() throws InterruptedException {
-        Thread.sleep(2000);
-        waitPresenceElement(By.cssSelector(".quiet-button"), 15);
+    public void deleteTeam() {
+       waitPresenceElement(By.cssSelector(".quiet-button"), 15);
         click(By.cssSelector(".quiet-button"));
 
     }
 
-    public void openSettings() throws InterruptedException {
-        Thread.sleep(2000);
+    public void openSettings() {
         waitPresenceElement(By.cssSelector(".icon-gear.icon-sm"), 10);
         click(By.cssSelector(".icon-gear.icon-sm")); // was .icon-gear.icon-sm.OiX3P2i2J92Xat
     }

@@ -7,23 +7,23 @@ import org.testng.annotations.Test;
 
 public class UserModificationTests extends TestBase {
     @Test
-    public void addAvatarTest() throws InterruptedException {
+    public void addAvatarTest() {
         app.getUserHelper().clickOnAvatar();
         app.getUserHelper().clickOnProfile();
         app.getBoardHelper().focusOn(By.cssSelector(".rsiNque2CCqtPE"));
-        app.getUserHelper().addPicture("C:\\_Pribluda\\IMG_1036.jpg");
+        app.getUserHelper().addPicture("C:\\Tools\\icon2.jpg");
         app.getUserHelper().returnToHomePage();
-        Thread.sleep(7000);
+       // Thread.sleep(5000);
     }
 
     @Test
-    public void changeAvatarTest() throws InterruptedException {
+    public void changeAvatarTest() {
         app.getUserHelper().clickOnAvatar();
         app.getUserHelper().clickOnProfile();
         app.getBoardHelper().focusOn(By.cssSelector(".rsiNque2CCqtPE"));
-        app.getUserHelper().addPicture("C:\\_Pribluda\\childhood.jpg");
+        app.getUserHelper().addPicture("C:\\Tools\\icon1.jpg");
         app.getUserHelper().returnToHomePage();
-        Thread.sleep(7000);
+       // Thread.sleep(7000);
     }
 
     @Test
@@ -32,12 +32,11 @@ public class UserModificationTests extends TestBase {
         app.getUserHelper().clickOnChangeLanguage();
         String toLang = "Nederlands"; //Deutsch  English (UK) Nederlands Svenska
         app.getUserHelper().changeLangageTo(toLang);
-       Thread.sleep(5000);
         app.getUserHelper().clickOnAvatar();
         app.getUserHelper().clickOnChangeLanguage();
         Assert.assertEquals(app.getUserHelper().currentLang(), toLang);
         app.getUserHelper().closeMenuProfile();
-        Thread.sleep(5000);
+        Thread.sleep(1000);
 
     }
 @AfterClass

@@ -16,7 +16,7 @@ public class BoardModificationTest extends TestBase {
         }
     }
 
-    @Test
+    @Test(enabled = false)
 
     public void testAddListOnBoard() {
         app.getBoardHelper().clickOnFirstBoard();

@@ -255,13 +255,12 @@ public class BoardHelper extends HelperBase {
 
     }
 
-    public void deleteBoardByNameFromClosedBoardsForm(String boardName) throws InterruptedException {
+    public void deleteBoardByNameFromClosedBoardsForm(String boardName) {
         if (isElementPresent(By.xpath("//ul[@class='_3Qi2qlYDnzYhMI']/li//a[contains(text(),'" + boardName + "')]"))) {
             click(By.xpath("//ul[@class='_3Qi2qlYDnzYhMI']/li//a[contains(text(),'" + boardName + "')]/../..//span[@ name='remove']"));
             click(By.cssSelector("._3G2HCCjNJGfeNW"));
             new WebDriverWait(driver, 3);
-            Thread.sleep(1500);
-        } else System.out.println("This board doesn't exist");
+             } else System.out.println("This board doesn't exist");
     }
 
     public void closeClosedBoardsForm() {
