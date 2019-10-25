@@ -7,7 +7,6 @@
 
             <class name="trello_tests.tests.BoardCreationTests"/>
             <class name="trello_tests.tests.BoardModificationTest"/>
-            <class name="trello_tests.tests.BoardReOpenTest"/>
             <class name="trello_tests.tests.BoardDeleteTest"/>
 
 

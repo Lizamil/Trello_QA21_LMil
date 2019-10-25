@@ -95,7 +95,7 @@ public class BoardCreationTests extends TestBase {
 
     @AfterClass
     public void removeUnnecessaryPersonalBoards() {
-        while (app.getBoardHelper().getPersonalBoardsCount()> 13)
+        while (app.getBoardHelper().getPersonalBoardsCount()> 15)
             app.getBoardHelper().deleteFirstPesonalBoardFromHomePage();
     }
 }

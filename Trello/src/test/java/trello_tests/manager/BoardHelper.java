@@ -16,7 +16,7 @@ public class BoardHelper extends HelperBase {
 
     //Count of Boards
     public int getPersonalBoardsCount() {
-        waitPresenceElement(By.xpath("//span[@class='icon-lg icon-member']/../../..//li"), 10);
+        waitPresenceElement(By.xpath("//span[@class='icon-lg icon-member']/../../..//li"), 15);
         return driver.findElements(By.xpath("//span[@class='icon-lg icon-member']/../../..//li")).size() - 1;
 
     }
@@ -199,7 +199,7 @@ public class BoardHelper extends HelperBase {
 
     }
 
-    public void clickOnMoreButtonInBoardMenu() {   //right method
+    public void clickOnMoreButtonInBoardMenuNew() {   //right method
         WebElement menuButton = driver.findElement(By.cssSelector(".board-header-btn.mod-show-menu"));
         System.out.println(menuButton.getCssValue("visibility"));
         if (menuButton.getCssValue("visibility").equals("visible")) {
@@ -210,7 +210,7 @@ public class BoardHelper extends HelperBase {
         }
     }
 
-    public void clickOnMoreButtonInBoardMenuNew() {
+    public void clickOnMoreButtonInBoardMenu() {
         WebElement menuButton = driver.findElement(By.cssSelector(".board-header-btn.mod-show-menu"));
         System.out.println(menuButton.getCssValue("visibility"));
         if (menuButton.getCssValue("visibility").equals("visible")) {

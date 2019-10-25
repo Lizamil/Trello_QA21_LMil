@@ -25,13 +25,13 @@ public class BoardDeleteTest extends TestBase {
         Assert.assertEquals(afterBoards, beforeBoards - 1);
     }
 
-    @Test(enabled=false)
+    @Test
     public void deletePersonalBoardsWhileCountMoreThanNeedNumber() {
-        int needCount = 5;
+        int needCount = 8;
         int countBoards = app.getBoardHelper().getPersonalBoardsCount();
         while (countBoards > needCount) {
             app.getBoardHelper().deleteFirstPesonalBoardFromHomePage();
-            app.getTeamHelper().returnToHomePage();
+          //  app.getTeamHelper().returnToHomePage();
             countBoards = app.getBoardHelper().getPersonalBoardsCount();
         }
         Assert.assertEquals(countBoards, needCount);
