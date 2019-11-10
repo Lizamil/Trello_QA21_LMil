@@ -1,2 +1,0 @@
-20:52:45.447 [Test worker] INFO  trello_tests.tests.TestBase - start test deleteTeamFromLeftNavMenu
-20:53:34.890 [Test worker] INFO  trello_tests.tests.TestBase - stop test deleteTeamFromLeftNavMenu

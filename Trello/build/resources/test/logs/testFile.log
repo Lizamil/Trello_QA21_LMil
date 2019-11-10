@@ -1,4 +1,0 @@
-97879 [Test worker] INFO  trello_tests.tests.TestBase - start test deleteTeamFromLeftNavMenu
-110268 [Test worker] INFO  trello_tests.tests.TestBase - stop test deleteTeamFromLeftNavMenu
-20:30:04.525 [Test worker] INFO  trello_tests.tests.TestBase - start test createBoardFromCreateBoardButtonTest
-20:30:44.095 [Test worker] INFO  trello_tests.tests.TestBase - stop test createBoardFromCreateBoardButtonTest

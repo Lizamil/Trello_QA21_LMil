@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="trello_tests.tests.BoardDeleteTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-11-10T10:14:20" hostname="DESKTOP-HOH611V" time="54.858">
+  <properties/>
+  <testcase name="deleteFirstPesonalBoardTest" classname="trello_tests.tests.BoardDeleteTest" time="54.858"/>
+  <system-out><![CDATA[12:14:20.390 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.xpath: //*[@class='icon-lg icon-member']/../../.. found
+12:14:20.392 [Test worker] INFO  trello_tests.tests.TestBase - start test deleteFirstPesonalBoardTest with parameters []
+12:14:20.412 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.xpath: //span[@class='icon-lg icon-member']/../../..//li found
+12:14:20.427 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.xpath: //span[@class='icon-lg icon-member']/../../..//li found
+12:14:20.441 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.xpath: //span[@class='icon-lg icon-member']/../../..//li found
+12:14:20.455 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.xpath: //span[@class='icon-lg icon-member']/../../..//li found
+12:14:20.468 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.xpath: //div[@class='_mtkwfAlvk6O3f']/../../..//li found
+12:14:20.482 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.xpath: //div[@class='_mtkwfAlvk6O3f']/../../..//li found
+12:14:20.496 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.xpath: //span[@class='icon-lg icon-organization']/../../..//li found
+12:14:20.506 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.xpath: //div[@class='_mtkwfAlvk6O3f']/../../..//li found
+12:14:20.518 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.xpath: //div[@class='_mtkwfAlvk6O3f']/../../..//li found
+12:14:20.529 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.xpath: //span[@class='icon-lg icon-member']/../../..//li found
+12:14:20.540 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.xpath: //span[@class='icon-lg icon-member']/../../..//li found
+12:14:21.244 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.cssSelector: .board-header-btn.mod-show-menu found
+hidden
+12:14:21.316 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.cssSelector: .js-open-more found
+12:14:21.386 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.cssSelector: .js-close-board found
+12:14:21.396 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.cssSelector: .js-close-board found
+12:14:21.588 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.cssSelector: .js-confirm found
+12:14:21.598 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.cssSelector: .js-confirm found
+12:14:21.734 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.cssSelector: .js-delete found
+12:14:21.792 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.cssSelector: .js-confirm found
+12:14:21.802 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.cssSelector: .js-confirm found
+12:14:41.895 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.cssSelector: ._3gUubwRZDWaOF0._2WhIqhRFBTG7Ry._2NubQcQM83YCVV found
+12:14:41.913 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.cssSelector: a[href='/'] found
+12:14:41.926 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.cssSelector: a[href='/'] found
+12:14:42.833 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.cssSelector: a[href='/'] found
+12:15:04.944 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.cssSelector: ._3gUubwRZDWaOF0._2WhIqhRFBTG7Ry._2NubQcQM83YCVV found
+12:15:04.960 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.cssSelector: a[href='/'] found
+12:15:04.970 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.cssSelector: a[href='/'] found
+12:15:10.079 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.cssSelector: a[href='/'] found
+12:15:15.159 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.xpath: //span[@class='icon-lg icon-member']/../../..//li found
+12:15:15.180 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.xpath: //span[@class='icon-lg icon-member']/../../..//li found
+12:15:15.199 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.xpath: //div[@class='_mtkwfAlvk6O3f']/../../..//li found
+12:15:15.219 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.xpath: //div[@class='_mtkwfAlvk6O3f']/../../..//li found
+12:15:15.253 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.xpath: //span[@class='icon-lg icon-organization']/../../..//li found
+12:15:15.266 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.xpath: //div[@class='_mtkwfAlvk6O3f']/../../..//li found
+12:15:15.281 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.xpath: //div[@class='_mtkwfAlvk6O3f']/../../..//li found
+12:15:15.288 [Test worker] INFO  trello_tests.tests.TestBase - stop test deleteFirstPesonalBoardTest with parameters []
+________________________________________________________________
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

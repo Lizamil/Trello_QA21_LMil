@@ -1,0 +1,47 @@
+23:59:44.132 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.cssSelector: [href='/login'] found
+23:59:46.132 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.id: user found
+23:59:46.148 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.id: user found
+23:59:46.844 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.id: user found
+23:59:46.884 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.id: user found
+23:59:47.024 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.id: password found
+23:59:47.108 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.id: password found
+23:59:47.152 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.id: password found
+23:59:47.236 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.id: login found
+23:59:51.937 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.xpath: //*[@class='icon-lg icon-member']/../../.. found
+23:59:51.945 [Test worker] INFO  trello_tests.tests.TestBase - start test deleteFirstPesonalBoardTest with parameters []
+23:59:51.965 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.xpath: //span[@class='icon-lg icon-member']/../../..//li found
+23:59:51.985 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.xpath: //span[@class='icon-lg icon-member']/../../..//li found
+23:59:52.001 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.xpath: //span[@class='icon-lg icon-member']/../../..//li found
+23:59:52.021 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.xpath: //span[@class='icon-lg icon-member']/../../..//li found
+23:59:52.037 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.xpath: //div[@class='_mtkwfAlvk6O3f']/../../..//li found
+23:59:52.061 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.xpath: //div[@class='_mtkwfAlvk6O3f']/../../..//li found
+23:59:52.085 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.xpath: //span[@class='icon-lg icon-organization']/../../..//li found
+23:59:52.098 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.xpath: //div[@class='_mtkwfAlvk6O3f']/../../..//li found
+23:59:52.114 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.xpath: //div[@class='_mtkwfAlvk6O3f']/../../..//li found
+23:59:52.130 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.xpath: //span[@class='icon-lg icon-member']/../../..//li found
+23:59:52.146 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.xpath: //span[@class='icon-lg icon-member']/../../..//li found
+23:59:52.975 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.cssSelector: .board-header-btn.mod-show-menu found
+23:59:53.075 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.cssSelector: .js-open-more found
+23:59:53.737 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.cssSelector: .js-close-board found
+23:59:53.770 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.cssSelector: .js-close-board found
+23:59:53.902 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.cssSelector: .js-confirm found
+23:59:53.913 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.cssSelector: .js-confirm found
+23:59:54.042 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.cssSelector: .js-delete found
+23:59:54.157 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.cssSelector: .js-confirm found
+23:59:54.173 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.cssSelector: .js-confirm found
+00:00:14.271 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.cssSelector: ._3gUubwRZDWaOF0._2WhIqhRFBTG7Ry._2NubQcQM83YCVV found
+00:00:14.286 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.cssSelector: a[href='/'] found
+00:00:14.302 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.cssSelector: a[href='/'] found
+00:00:14.455 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.cssSelector: a[href='/'] found
+00:00:36.239 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.cssSelector: ._3gUubwRZDWaOF0._2WhIqhRFBTG7Ry._2NubQcQM83YCVV found
+00:00:36.254 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.cssSelector: a[href='/'] found
+00:00:36.270 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.cssSelector: a[href='/'] found
+00:00:36.406 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.cssSelector: a[href='/'] found
+00:00:36.527 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.xpath: //span[@class='icon-lg icon-member']/../../..//li found
+00:00:36.547 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.xpath: //span[@class='icon-lg icon-member']/../../..//li found
+00:00:36.567 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.xpath: //div[@class='_mtkwfAlvk6O3f']/../../..//li found
+00:00:36.587 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.xpath: //div[@class='_mtkwfAlvk6O3f']/../../..//li found
+00:00:36.607 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.xpath: //span[@class='icon-lg icon-organization']/../../..//li found
+00:00:36.627 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.xpath: //div[@class='_mtkwfAlvk6O3f']/../../..//li found
+00:00:36.643 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.xpath: //div[@class='_mtkwfAlvk6O3f']/../../..//li found
+00:00:36.651 [Test worker] INFO  trello_tests.tests.TestBase - stop test deleteFirstPesonalBoardTest with parameters []

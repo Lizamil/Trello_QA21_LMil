@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/trello_web.iml" filepath="$PROJECT_DIR$/.idea/modules/trello_web.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/trello_web.main.iml" filepath="$PROJECT_DIR$/.idea/modules/trello_web.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/trello_web.test.iml" filepath="$PROJECT_DIR$/.idea/modules/trello_web.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Trello.iml" filepath="$PROJECT_DIR$/.idea/modules/Trello.iml" />
     </modules>
   </component>
 </project>

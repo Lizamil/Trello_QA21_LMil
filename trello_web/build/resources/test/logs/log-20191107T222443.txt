@@ -1,0 +1,53 @@
+22:24:53.550 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.cssSelector: [href='/login'] found
+22:24:55.798 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.id: user found
+22:24:55.815 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.id: user found
+22:24:56.587 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.id: user found
+22:24:56.632 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.id: user found
+22:24:56.777 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.id: password found
+22:24:56.852 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.id: password found
+22:24:56.902 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.id: password found
+22:24:56.989 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.id: login found
+22:25:05.780 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.xpath: //*[@class='icon-lg icon-member']/../../.. found
+22:25:05.788 [Test worker] INFO  trello_tests.tests.TestBase - start test createBoardFromCreateBoardButtonTest with parameters []
+22:25:05.815 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.xpath: //span[@class='icon-lg icon-member']/../../..//li found
+22:25:05.840 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.xpath: //span[@class='icon-lg icon-member']/../../..//li found
+22:25:05.861 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.xpath: //div[@class='_mtkwfAlvk6O3f']/../../..//li found
+22:25:05.885 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.xpath: //div[@class='_mtkwfAlvk6O3f']/../../..//li found
+22:25:05.909 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.xpath: //span[@class='icon-lg icon-organization']/../../..//li found
+22:25:05.926 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.xpath: //div[@class='_mtkwfAlvk6O3f']/../../..//li found
+22:25:05.942 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.xpath: //div[@class='_mtkwfAlvk6O3f']/../../..//li found
+22:25:05.958 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.xpath: //div[@class='_mtkwfAlvk6O3f']/../../..//li found
+22:25:05.976 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.xpath: //div[@class='_mtkwfAlvk6O3f']/../../..//li found
+22:25:05.998 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.cssSelector: .board-tile.mod-add found
+22:25:06.178 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.cssSelector: [placeholder='Add board title'] found
+22:25:06.276 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.cssSelector: [placeholder='Add board title'] found
+22:25:06.319 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.cssSelector: [placeholder='Add board title'] found
+22:25:06.592 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.cssSelector: [class='subtle-chooser-trigger unstyled-button org-chooser-trigger'] found
+22:25:06.700 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.xpath: //*[@class='pop-over-list org-chooser']//li[1] found
+22:25:06.758 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.xpath: //*[@class='pop-over-list org-chooser']//li[2] found
+22:25:06.801 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.xpath: //*[@class='pop-over-list org-chooser']//li[3] found
+22:25:06.841 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.xpath: //*[@class='pop-over-list org-chooser']//li[4] found
+22:25:06.883 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.xpath: //*[@class='pop-over-list org-chooser']//li[5] found
+22:25:06.929 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.xpath: //*[@class='pop-over-list org-chooser']//li[6] found
+22:25:06.972 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.xpath: //*[@class='pop-over-list org-chooser']//li[7] found
+22:25:07.010 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.xpath: //*[@class='pop-over-list org-chooser']//li[8] found
+22:25:07.051 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.xpath: //*[@class='pop-over-list org-chooser']//li[9] found
+22:25:07.086 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.xpath: //*[@class='pop-over-list org-chooser']//li[1] found
+22:25:07.188 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.cssSelector: [class='subtle-chooser-trigger unstyled-button vis-chooser-trigger'] found
+22:25:07.302 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.xpath: //ul[@class='pop-over-list vis-chooser']//span[@class='icon-sm icon-private'] found
+22:25:07.398 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.cssSelector: .primary found
+22:25:27.527 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.cssSelector: ._3gUubwRZDWaOF0._2WhIqhRFBTG7Ry._2NubQcQM83YCVV found
+22:25:27.544 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.cssSelector: a[href='/'] found
+22:25:27.556 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.cssSelector: a[href='/'] found
+22:25:27.658 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.cssSelector: a[href='/'] found
+22:25:28.506 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.xpath: //span[@class='icon-lg icon-member']/../../..//li found
+22:25:28.537 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.xpath: //span[@class='icon-lg icon-member']/../../..//li found
+22:25:28.558 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.xpath: //div[@class='_mtkwfAlvk6O3f']/../../..//li found
+22:25:28.581 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.xpath: //div[@class='_mtkwfAlvk6O3f']/../../..//li found
+22:25:28.602 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.xpath: //span[@class='icon-lg icon-organization']/../../..//li found
+22:25:28.616 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.xpath: //div[@class='_mtkwfAlvk6O3f']/../../..//li found
+22:25:28.629 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.xpath: //div[@class='_mtkwfAlvk6O3f']/../../..//li found
+22:25:28.649 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.cssSelector: [title=b_no_private_1573158305942] found
+22:25:28.656 [Test worker] INFO  trello_tests.tests.TestBase - stop test createBoardFromCreateBoardButtonTest with parameters []
+22:25:28.673 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.xpath: //span[@class='icon-lg icon-member']/../../..//li found
+22:25:28.695 [Test worker] INFO  t.m.ApplicationManager$MyListener - By.xpath: //span[@class='icon-lg icon-member']/../../..//li found
