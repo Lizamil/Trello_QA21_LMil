@@ -1,0 +1,2 @@
+23:01:24.390 [Test worker] INFO  trello_tests.tests.TestBase - start test createBoardMobTest with parameters []
+23:01:50.971 [Test worker] INFO  trello_tests.tests.TestBase - stop test createBoardMobTest with parameters []

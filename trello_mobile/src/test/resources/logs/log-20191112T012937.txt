@@ -1,0 +1,2 @@
+01:29:59.465 [Test worker] INFO  trello_tests.tests.TestBase - start test countBoard with parameters []
+01:30:09.477 [Test worker] INFO  trello_tests.tests.TestBase - stop test countBoard with parameters []

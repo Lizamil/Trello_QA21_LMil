@@ -1,0 +1,3 @@
+20:23:36.444 [Test worker] INFO  trello_tests.tests.TestBase - start test openAppTest with parameters []
+20:23:36.449 [Test worker] INFO  trello_tests.tests.TestBase - App opened
+20:23:36.454 [Test worker] INFO  trello_tests.tests.TestBase - stop test openAppTest with parameters []

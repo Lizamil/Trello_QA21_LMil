@@ -1,0 +1,2 @@
+12:00:06.276 [Test worker] INFO  trello_tests.tests.TestBase - start test swipeToRight with parameters []
+12:00:07.060 [Test worker] INFO  trello_tests.tests.TestBase - stop test swipeToRight with parameters []

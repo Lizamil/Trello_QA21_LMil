@@ -26,18 +26,19 @@ public class OpenAppWikiTest {
 
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
 
-
     }
+
     @Test
     public void openAppTest(){
 
         System.out.println("App opened");
+        driver.findElementById("log_in_button");
     }
 
     @AfterClass
 
     public void tearDown() {
-
+        driver.quit();
     }
 
 }
